@@ -25,4 +25,9 @@ function aumentaTamanho() {
     geraSenha();
 }
 
+/*aula5*/
+const campoSenha = document.querySelector('#campo-senha');
 
+const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
+
+campoSenha.value = letrasMaiusculas;
