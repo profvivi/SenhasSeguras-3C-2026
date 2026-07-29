@@ -39,4 +39,4 @@ function geraSenha(){
     }
     campoSenha.value = senha;
 }
-campoSenha.value = letrasMaiusculas;
+
