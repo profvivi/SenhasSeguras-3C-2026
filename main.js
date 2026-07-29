@@ -8,23 +8,22 @@ const botoes = document.querySelectorAll('.parametro-senha__botao');
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
 
-function diminuiTamanho() {
-    if (tamanhoSenha > 1) {
-        // tamanhoSenha = tamanhoSenha-1;
+ffunction diminuiTamanho(){
+    if (tamanhoSenha > 1){
+       // tamanhoSenha = tamanhoSenha-1;
         tamanhoSenha--;
     }
     numeroSenha.textContent = tamanhoSenha;
-   
+    geraSenha();
 }
-function aumentaTamanho() {
-    if (tamanhoSenha < 20) {
-        // tamanhoSenha = tamanhoSenha+1;
-        tamanhoSenha++;
+function aumentaTamanho(){
+    if (tamanhoSenha < 20){
+       // tamanhoSenha = tamanhoSenha+1;
+       tamanhoSenha++;
     }
     numeroSenha.textContent = tamanhoSenha;
-    
+    geraSenha();
 }
-
 /*aula5*/
 const campoSenha = document.querySelector('#campo-senha');
 
@@ -32,11 +31,12 @@ const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
 geraSenha();
 
 function geraSenha(){
+    let senha = '' ”;
     for (let i = 0; i < tamanhoSenha;i++){
         let numeroAleatorio = Math.random()*letrasMaiusculas.length;
         numeroAleatorio = Math.floor(numeroAleatorio);
-        console.log(letrasMaiusculas[numeroAleatorio]);
+        senha = senha + letrasMaiusculas[numeroAleatorio];
     }
+    campoSenha.value = senha;
 }
-
 campoSenha.value = letrasMaiusculas;
