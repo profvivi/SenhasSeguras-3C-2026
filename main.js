@@ -27,6 +27,7 @@ function aumentaTamanho(){
 /*aula5*/
 const campoSenha = document.querySelector('#campo-senha');
 
+
 const letrasMaiusculas = 'ABCDEFGHIJKLMNOPQRSTUVXYWZ';
 geraSenha();
 
