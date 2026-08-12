@@ -1,155 +1,189 @@
+/* Importa as fontes Roboto e Roboto Mono diretamente do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
-:root{
-    --branco: white;
-    --cor-de-fundo: #00162E;
-    --fundo-senha: #00244D;
-    --fundo-texto: #001E40;
-    --borda: #0075FF;
-    --roboto: 'Roboto', sans-serif;
-    --roboto-mono: 'Roboto Mono', monospace;
+/* Definição das variáveis globais do projeto (paleta de cores e tipografia) */
+:root {
+--branco: white; /* Cor do texto geral */
+--cor-de-fundo: #15002e; /* Roxo escuro do fundo da página */
+--fundo-senha: #33004d; /* Roxo médio para o bloco do resultado da senha */
+--fundo-texto: #2c0040; /* Roxo intermediário para o bloco de opções */
+--borda: #d304fd; /* Rosa neon/magenta para destacar bordas e botões */
+--roboto: 'Roboto', sans-serif; /* Fonte padrão para textos comuns */
+--roboto-mono: 'Roboto Mono', monospace; /* Fonte monoespaçada (letras com mesma largura) para códigos e
+senhas */
 }
 
-*{
-    font-weight: 400;
+/* Reset global para definir a espessura da fonte padrão em todos os elementos */
+* {
+font-weight: 400; /* Estilo de fonte regular/normal */
 }
 
-body{
-    color: var(--branco);
-    background-color: var(--cor-de-fundo);
-    font-family: var(--roboto);
+/* Estilização da tag principal da página */
+body {
+color: var(--branco); /* Aplica a cor branca nos textos */
+background-color: var(--cor-de-fundo); /* Aplica o roxo escuro no fundo total */
+font-family: var(--roboto); /* Define a fonte padrão do site */
 }
 
-.titulo-principal{
-    font-family: var(--roboto-mono);
-    font-size: 32px;
+/* Estilo do título principal do gerador */
+.titulo-principal {
+font-family: var(--roboto-mono); /* Usa fonte monoespaçada para dar aspecto tecnológico */
+font-size: 32px; /* Tamanho do texto grande */
 }
 
-.titulo-secundario{
-    font-size: 24px;
+/* Estilo do subtítulo do topo */
+.titulo-secundario {
+font-size: 24px;
 }
 
-.conteudo-titulo{
-    text-align: center;
-    margin-top: 80px;
+/* Centraliza o bloco de títulos do topo e adiciona um espaçamento superior */
+.conteudo-titulo {
+text-align: center;
+margin-top: 80px;
 }
 
-.conteudo-senha{
-    margin-top: 80px; 
-    background: var(--fundo-senha);
-    padding: 24px;
-    border-bottom: 6px solid var(--borda);
+/* Bloco que envolve a exibição da senha gerada */
+.conteudo-senha {
+margin-top: 80px;
+background: var(--fundo-senha);
+padding: 24px; /* Espaçamento interno */
+border-bottom: 6px solid var(--borda); /* Borda grossa magenta na parte inferior */
 }
 
-#campo-senha{
-    background-color: var(--fundo-senha);
-    border: none;
-    color: var(--branco);
-    font-family: var(--roboto-mono);
-    font-size: 40px;
-    width: 70%;
+/* Campo de texto (input) que exibe a senha */
+#campo-senha {
+background-color: var(--fundo-senha);
+border: none; /* Remove as bordas padrões do input */
+color: var(--branco);
+font-family: var(--roboto-mono); /* Garante que a senha fique bem alinhada */
+font-size: 40px; /* Texto bem grande para leitura fácil */
+width: 70%; /* Ocupa 70% da largura do bloco pai */
 }
 
-#campo-senha:focus{
-    outline: none;
+/* Remove a borda de realce padrão do navegador quando o input é focado/clicado */
+#campo-senha:focus {
+outline: none;
 }
 
-.conteudo{
-    max-width: 1200px;
-    margin: 0 auto;
+/* Container centralizador do projeto */
+.conteudo {
+max-width: 1200px; /* Largura máxima da aplicação na tela */
+margin: 0 auto; /* Centraliza o bloco horizontalmente na tela */
 }
 
-.parametro{
-    background-color: var(--fundo-texto);
-    border: 2px solid var(--borda);
-    margin-top: 32px;
-    padding: 24px;
+/* Caixa geral que engloba todas as configurações da senha */
+.parametro {
+background-color: var(--fundo-texto);
+border: 2px solid var(--borda); /* Borda magenta fina ao redor do bloco */
+margin-top: 32px;
+padding: 24px;
 }
 
-.parametro-titulo{
-    font-family: var(--roboto-mono);
-    font-size: 28px;
+/* Título da seção de personalização */
+.parametro-titulo {
+font-family: var(--roboto-mono);
+font-size: 28px;
 }
 
-.parametro-senha__titulo{
-    font-size:24px;
+/* Títulos menores dentro do painel (ex: "Número de caracteres") */
+.parametro-senha__titulo {
+font-size: 24px;
 }
 
-.parametro-coluna__senha{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.parametro-senha{
-    width: 50%;
-    margin: 0 auto;
+/* Container das colunas de opções (organizado por padrão para celular/telas pequenas) */
+.parametro-coluna__senha {
+display: flex;
+flex-direction: column; /* Alinha os blocos de opções um abaixo do outro */
+justify-content: center;
 }
 
-.parametro-senha-botoes{
-    display: flex;
-    justify-content: center;
+/* Cada bloco de opção individual */
+.parametro-senha {
+width: 50%; /* Ocupa metade do espaço disponível */
+margin: 0 auto; /* Centraliza o bloco */
 }
 
-.parametro-senha__botao{
-    background-color: var(--fundo-texto);
-    color: var(--branco);
-    border: 2px solid var(--borda);
-    padding: 24px;
-    font-size: 24px;
-     cursor: pointer; 
+/* Alinhamento horizontal dos botões de "+" e "-" e do número */
+.parametro-senha-botoes {
+display: flex;
+justify-content: center;
 }
 
-.parametro-senha__texto{
-    padding: 24px;
-    border-top: 2px solid var(--borda);
-    border-bottom: 2px solid var(--borda);
-    margin: 0;
-    font-size: 24px;
+/* Botões de aumentar (+) e diminuir (-) o tamanho */
+.parametro-senha__botao {
+background-color: var(--fundo-texto);
+color: var(--branco);
+border: 2px solid var(--borda);
+padding: 24px;
+font-size: 24px;
+cursor: pointer; /* Transforma a seta do mouse na "mãozinha" de clique */
 }
 
-label{
-    font-size: 20px;
+/* Caixa com o número do tamanho atual da senha entre os botões */
+.parametro-senha__texto {
+padding: 24px;
+border-top: 2px solid var(--borda); /* Borda magenta apenas no topo */
+border-bottom: 2px solid var(--borda); /* Borda magenta apenas na base */
+margin: 0;
+font-size: 24px;
 }
 
-.checkbox{
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+/* Estilo do texto dos rótulos dos checkboxes */
+label {
+
+font-size: 20px;
 }
 
-.barra{
-    background-color: var(--fundo-senha);
-    height: 30px;
-    width: 100%;
+/* Estilo das caixas de seleção (checkboxes) */
+.checkbox {
+width: 20px;
+height: 20px;
+cursor: pointer; /* Aplica a "mãozinha" de clique */
 }
 
-.forca{
-    height: 30px;
-    position: relative;
-    bottom: 30px;
+/* Fundo cinza/roxo escuro que serve como trilha vazia para a barra de força */
+.barra {
+background-color: var(--fundo-senha);
+height: 30px;
+width: 100%;
 }
 
-.fraca{
-    width: 25%;
-    background-color: #E71B32; 
+/* Elemento da barra de força que vai se sobrepor à trilha de fundo */
+.forca {
+height: 30px;
+position: relative;
+bottom: 30px; /* Joga a barra preenchida exatamente em cima do elemento '.barra' */
 }
 
-.parametro-senha-textos{
-    display: flex;
-    justify-content: space-between;
+/* Estado: Senha Fraca (25% de preenchimento em vermelho) */
+.fraca {
+width: 25%;
+background-color: #E71B32;
 }
 
-.media{
-    background-color: #FAF408;
-    width: 50%;
+/* Estado: Senha Média (50% de preenchimento em amarelo) */
+.media {
+background-color: #FAF408;
+
+width: 50%;
 }
 
-.forte{
-    background-color: #00FF85;
-    width: 100%;
+/* Estado: Senha Forte (100% de preenchimento em verde) */
+.forte {
+background-color: #00FF85;
+width: 100%;
 }
+
+/* Distribui as legendas textuais ("Fraca", "Média", "Forte") pelas extremidades da barra */
+.parametro-senha-textos {
+display: flex;
+justify-content: space-between;
+}
+
+/* Regra de responsividade (Media Query) para telas maiores (computadores/tablets) */
 @media screen and (min-width: 768px) {
-    .parametro-coluna__senha{
-        flex-direction: row;
-    }
+/* Altera o alinhamento das opções para ficarem lado a lado (em linha) em telas grandes */
+.parametro-coluna__senha {
+flex-direction: row;
+}
 }
